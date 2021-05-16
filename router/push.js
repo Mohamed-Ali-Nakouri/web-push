@@ -84,7 +84,7 @@ async function sendWebPush(req,res,payload) {
     const db = client.db('inn_db');
     const items = await db.collection("subscriber").find({ app_id:161 , platform_id:3 }).toArray();
     let parallelSubscriptionCalls = items.map((subscription) => {
-        console.log(subscription);
+       // console.log(subscription);
         return new Promise((resolve, reject) => {
             const pushSubscription = {
                 endpoint: subscription.registration,
@@ -111,13 +111,13 @@ async function sendWebPush(req,res,payload) {
             ).then((value) => {
                 resolve({
                     status: true,
-                    endpoint: subscription.endpoint,
+                    endpoint: subscription.registration,
                     data: value
                 });
             }).catch((err) => {
                 reject({
                     status: false,
-                    endpoint: subscription.endpoint,
+                    endpoint: subscription.registration,
                     data: err
                 });
             });

@@ -17,12 +17,6 @@ const subscribe = require('./router/subscriber');
 const keys = require('./config/keys');
 //Handlebars Helpers
 
-mongoose.Promise = global.Promise;
-
-// Mongoose Connect
-mongoose.connect(keys.mongoURI, {})
-    .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.log(err));
 
 //Create Express middleware
 const app = express();
