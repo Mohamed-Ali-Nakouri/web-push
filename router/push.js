@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoClient = require('mongodb').MongoClient;
 const q = require('q');
 const webPush = require('web-push');
-const keys = require('./../config/keys');
+const keys = require('./../kk/keys');
 const url1 = "mongodb+srv://inn_db:Qdv1898XXyjauKDF@inn-db.8el2u.mongodb.net/inn_db?maxPoolSize=600000&socketTimeoutMS=600000?connectTimeoutMS=600000?retryWrites=true&w=majority";
 
 //Post route of push url is as http://host:3000/push
