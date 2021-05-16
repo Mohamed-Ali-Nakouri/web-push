@@ -115,6 +115,7 @@ async function sendWebPush(req,res,payload) {
                     data: value
                 });
             }).catch((err) => {
+                console.log(err);
                 reject({
                     status: false,
                     endpoint: subscription.registration,
